@@ -247,7 +247,8 @@ void menu_main() {
       if (card_detected) {
         if (!card_open) {
           #if PIN_EXISTS(SD_DETECT)
-            GCODES_ITEM(MSG_CHANGE_MEDIA, PSTR("M21"));       // M21 Change Media
+            // useless to me menu
+            //GCODES_ITEM(MSG_CHANGE_MEDIA, PSTR("M21"));       // M21 Change Media
           #else                                               // - or -
             ACTION_ITEM(MSG_RELEASE_MEDIA, []{                // M22 Release Media
               queue.inject(PSTR("M22"));
